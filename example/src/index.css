@@ -7,3 +7,10 @@ body {
 .canvas-wrapper {
 	position: relative;
 }
+.clicked-item {
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: bold;
+  padding-left: 20px;
+}

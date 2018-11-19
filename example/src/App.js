@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 
-import { Canvas, Rectangle, TransparentImage, Circle } from 'react-interactive-canvas'
+import { Canvas, Rectangle, TransparentImage, Circle, Polygon, Line } from 'react-interactive-canvas'
 
 const size = 20;
+const spacing = 10;
 
 export default class App extends Component {
   state = {
@@ -29,7 +30,6 @@ export default class App extends Component {
   }
 
   handleClick = id => {
-    console.log(id);
     this.setState({clickedItem: id});
   }
 
@@ -38,17 +38,38 @@ export default class App extends Component {
     const color = key % 2 ? 'red' : 'green';
     return (
       <main>
-        <div>Clicked Item: {clickedItem}</div>
+        <div className="clicked-item">Clicked Item: {clickedItem}</div>
         <div className="canvas-wrapper">
           <Canvas width={1000} height={1000}>
-            <TransparentImage id="penguin" x={100} y={100} width={200} height={200} onClick={this.handleClick}/>
+            <TransparentImage
+              src={`${process.env.PUBLIC_URL}/penguin-with-transparent-background.gif`}
+              id="penguin" x={80} y={200} width={450} height={400} onClick={this.handleClick}/>
+            <Polygon points={[
+                [30, 100],
+                [40, 400],
+                [600, 20]
+              ]}
+              onClick={this.handleClick}
+              id='grey-triangle'
+              fillStyle='#2b2b2b'
+            />
+            <Line points={[
+                [100, 100],
+                [400, 40],
+                [20, 600]
+              ]}
+              onClick={this.handleClick}
+              id='purple-line'
+              strokeStyle='#551a8b'
+              lineWidth={10}
+            />
             {items.map((itemList, x) => {
               return itemList.map(y => {
                 return (
                   <Rectangle
                     onClick={this.handleClick}
-                    x={x + size * x}
-                    y={y + size * y}
+                    x={x + (size + spacing) * x}
+                    y={y + (size + spacing) * y}
                     width={size}
                     height={size}
                     fillStyle={color}
@@ -63,8 +84,8 @@ export default class App extends Component {
                 return (
                   <Circle
                     onClick={this.handleClick}
-                    x={x + size * x}
-                    y={(y + items.length * size + size) + size * y}
+                    x={x + (size + spacing) * x}
+                    y={(y + items.length * (size + spacing) + size) + (size + spacing) * y}
                     radius={size / 2}
                     fillStyle={color}
                     key={`${x}${y}-circle`}

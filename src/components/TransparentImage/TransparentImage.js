@@ -9,7 +9,7 @@ TransparentImage.draw = ({ ctx, x, y, width, height, patch }) => {
   ctx.drawImage(patch, x, y, width, height);
 };
 
-TransparentImage.getEventsPatch = ({ x, y, width, height, uniqueColor }) => {
+TransparentImage.getEventsPatch = ({ x, y, width, height, src, uniqueColor }) => {
   return new Promise((resolve, reject) => {
     const tempCanvas = document.createElement( "canvas" );
     tempCanvas.width = width;
@@ -27,11 +27,11 @@ TransparentImage.getEventsPatch = ({ x, y, width, height, uniqueColor }) => {
     img.onerror = () => {
       reject();
     };
-    img.src = `${process.env.PUBLIC_URL}/penguin-with-transparent-background.gif`;
+    img.src = src;
   });
 }
 
-TransparentImage.getPatch = ({ x, y, width, height }) => {
+TransparentImage.getPatch = ({ x, y, width, height, src }) => {
   return new Promise((resolve, reject) => {
     const tempCanvas = document.createElement( "canvas" );
     tempCanvas.width = width;
@@ -46,7 +46,7 @@ TransparentImage.getPatch = ({ x, y, width, height }) => {
     img.onerror = () => {
       reject();
     };
-    img.src = `${process.env.PUBLIC_URL}/penguin-with-transparent-background.gif`;
+    img.src = src;
   });
 }
 
