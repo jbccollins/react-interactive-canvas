@@ -116,7 +116,9 @@ class Canvas extends React.Component {
     })).then(patches => {
       childrenArr.forEach((child, i) => {
         const patch = patches[i];
+        ctx.save();
         child.type.draw({...child.props, ctx, patch});
+        ctx.restore();
       })
     })
 
@@ -127,7 +129,9 @@ class Canvas extends React.Component {
       childrenArr.forEach((child, i) => {
         const uniqueColor = ids[child.props.id]['color'];
         const patch = patches[i];
+        eventCtx.save();
         child.type.drawEvents({...child.props, eventCtx, patch, uniqueColor});
+        eventCtx.restore();
       })
     })
 

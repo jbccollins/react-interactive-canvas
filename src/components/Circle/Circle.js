@@ -17,14 +17,16 @@ Circle.drawEvents = ({ eventCtx, x, y, radius, uniqueColor }) => {
 
   eventCtx.fillStyle = uniqueColor;
   eventCtx.beginPath();
-  eventCtx.arc(x + radius, y + radius, radius, 0, 2 * Math.PI);
+  //eventCtx.arc(x + radius, y + radius, radius, 0, 2 * Math.PI);
+  eventCtx.arc(x, y, radius, 0, 2 * Math.PI);
   eventCtx.fill();
 };
 
 Circle.draw = ({ ctx, x, y, radius, fillStyle }) => {
   ctx.fillStyle = fillStyle;
   ctx.beginPath();
-  ctx.arc(x + radius, y + radius, radius, 0, 2 * Math.PI);
+  //ctx.arc(x + radius, y + radius, radius, 0, 2 * Math.PI);
+  ctx.arc(x, y, radius, 0, 2 * Math.PI);
   ctx.fill();
 };
 

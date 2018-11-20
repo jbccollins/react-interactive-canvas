@@ -14,3 +14,58 @@ body {
   font-weight: bold;
   padding-left: 20px;
 }
+
+main {
+  display: flex;
+}
+.canvas-wrapper {
+  border: 1px dashed black;
+  margin: 16px;
+}
+.events-container {
+  width: 250px;
+  font-size: 12px;
+  color: grey;
+}
+.item-add {
+  padding: 4px;
+  cursor: pointer;
+  color: black;
+  border-radius: 4px;
+  background: darkgray;
+  text-align: center;
+}
+
+.item-add:active {
+  background: lightgray;
+}
+
+.right-panel {
+  padding: 20px;
+  display: flex;
+}
+
+.item-create-content {
+  display: flex;
+  flex-flow: column;
+  background: #2b2b2b;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+}
+.item-create {
+  margin: 4px;
+}
+.item-create input {
+  float: right;
+  margin-left: 4px;
+  color: #2b2b2b;
+}
+.item-create-content > div {
+  margin: 2px 0px;
+}
+.item-type-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
