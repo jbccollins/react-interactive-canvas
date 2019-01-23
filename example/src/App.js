@@ -50,7 +50,7 @@ export default class App extends Component {
         type: 'click',
         time: new Date(),
         id
-      }).slice(-20)
+      })
     });
   }
 

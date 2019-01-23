@@ -26,6 +26,11 @@ main {
   width: 250px;
   font-size: 12px;
   color: grey;
+  padding: 12px;
+  border: 1px dashed grey;
+  margin: 16px;
+  height: calc(100vh - 56px);
+  overflow: auto;
 }
 .item-add {
   padding: 4px;
@@ -55,11 +60,13 @@ main {
 }
 .item-create {
   margin: 4px;
+  width: 240px;
 }
 .item-create input {
   float: right;
   margin-left: 4px;
   color: #2b2b2b;
+  width: 155px;
 }
 .item-create-content > div {
   margin: 2px 0px;

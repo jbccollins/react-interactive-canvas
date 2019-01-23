@@ -30,12 +30,10 @@ Rectangle.propTypes = {
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
   fillStyle: PropTypes.string.isRequired,
-  strokeStyle: PropTypes.string.isRequired
 };
 
 Rectangle.defaultProps = {
   fillStyle: "black",
-  strokeStyle: "black"
 };
 
 export default Rectangle;
