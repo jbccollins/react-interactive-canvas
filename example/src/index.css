@@ -20,7 +20,6 @@ main {
 }
 .canvas-wrapper {
   border: 1px dashed black;
-  margin: 16px;
 }
 .events-container {
   width: 250px;
@@ -45,8 +44,11 @@ main {
   background: lightgray;
 }
 
-.right-panel {
+.right-panel, .left-panel {
   padding: 20px;
+}
+
+.controls-container {
   display: flex;
 }
 

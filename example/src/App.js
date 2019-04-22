@@ -97,6 +97,7 @@ export default class App extends Component {
           </div>
         </div>
         <div className="left-panel">
+          <h3>Try clicking on any of the shapes</h3>
           <div className="canvas-wrapper">
             <Canvas width={400} height={400}>
               <TransparentImage
@@ -163,35 +164,38 @@ export default class App extends Component {
           </div>
         </div>
         <div className="right-panel">
-          <div className="rectangle-create item-create">
-            <div className="item-create-content">
-              <div className="item-type-title">Add a Rectangle</div>
-              <div>x <input value={rectangle.x} onChange={e => this.handleItemCreateChange(RECTANGLE, "x", e)} type="number"/></div>
-              <div>y <input value={rectangle.y} onChange={e => this.handleItemCreateChange(RECTANGLE, "y", e)} type="number"/></div>
-              <div>width <input value={rectangle.width} onChange={e => this.handleItemCreateChange(RECTANGLE, "width", e)} type="number"/></div>
-              <div>height <input value={rectangle.height} onChange={e => this.handleItemCreateChange(RECTANGLE, "height", e)} type="number"/></div>
-              <div>fillStyle <input value={rectangle.fillStyle} onChange={e => this.handleItemCreateChange(RECTANGLE, "fillStyle", e)} type="text"/></div>
-              <div>id <input value={rectangle.id} onChange={e => this.handleItemCreateChange(RECTANGLE, "id", e)} type="text"/></div>
-              <div className="item-add" onClick={() => this.handleItemAdd(RECTANGLE)}>Add Rectangle</div>
+          <h3>Add more shapes using these controls</h3>
+          <div className="controls-container">
+            <div className="rectangle-create item-create">
+              <div className="item-create-content">
+                <div className="item-type-title">Add a Rectangle</div>
+                <div>x <input value={rectangle.x} onChange={e => this.handleItemCreateChange(RECTANGLE, "x", e)} type="number"/></div>
+                <div>y <input value={rectangle.y} onChange={e => this.handleItemCreateChange(RECTANGLE, "y", e)} type="number"/></div>
+                <div>width <input value={rectangle.width} onChange={e => this.handleItemCreateChange(RECTANGLE, "width", e)} type="number"/></div>
+                <div>height <input value={rectangle.height} onChange={e => this.handleItemCreateChange(RECTANGLE, "height", e)} type="number"/></div>
+                <div>fillStyle <input value={rectangle.fillStyle} onChange={e => this.handleItemCreateChange(RECTANGLE, "fillStyle", e)} type="text"/></div>
+                <div>id <input value={rectangle.id} onChange={e => this.handleItemCreateChange(RECTANGLE, "id", e)} type="text"/></div>
+                <div className="item-add" onClick={() => this.handleItemAdd(RECTANGLE)}>Add Rectangle</div>
+              </div>
             </div>
-          </div>
-          <div className="circle-create item-create">
-            <div className="item-create-content">
-              <div className="item-type-title">Add a Circle</div>
-              <div>x <input value={circle.x} onChange={e => this.handleItemCreateChange(CIRCLE, "x", e)} type="number"/></div>
-              <div>y <input value={circle.y} onChange={e => this.handleItemCreateChange(CIRCLE, "y", e)} type="number"/></div>
-              <div>radius <input value={circle.radius} onChange={e => this.handleItemCreateChange(CIRCLE, "radius", e)} type="number"/></div>
-              <div>fillStyle <input value={circle.fillStyle} onChange={e => this.handleItemCreateChange(CIRCLE, "fillStyle", e)} type="text"/></div>
-              <div>id <input value={circle.id} onChange={e => this.handleItemCreateChange(CIRCLE, "id", e)} type="text"/></div>
-              <div className="item-add" onClick={() => this.handleItemAdd(CIRCLE)}>Add Circle</div>
+            <div className="circle-create item-create">
+              <div className="item-create-content">
+                <div className="item-type-title">Add a Circle</div>
+                <div>x <input value={circle.x} onChange={e => this.handleItemCreateChange(CIRCLE, "x", e)} type="number"/></div>
+                <div>y <input value={circle.y} onChange={e => this.handleItemCreateChange(CIRCLE, "y", e)} type="number"/></div>
+                <div>radius <input value={circle.radius} onChange={e => this.handleItemCreateChange(CIRCLE, "radius", e)} type="number"/></div>
+                <div>fillStyle <input value={circle.fillStyle} onChange={e => this.handleItemCreateChange(CIRCLE, "fillStyle", e)} type="text"/></div>
+                <div>id <input value={circle.id} onChange={e => this.handleItemCreateChange(CIRCLE, "id", e)} type="text"/></div>
+                <div className="item-add" onClick={() => this.handleItemAdd(CIRCLE)}>Add Circle</div>
+              </div>
             </div>
-          </div>
-          <div className="polygon-create item-create">
-            <div className="item-create-content">
-              <div className="item-type-title">Add a Polygon</div>
-              <div>fillStyle <input value={polygon.fillStyle} onChange={e => this.handleItemCreateChange(POLYGON, "fillStyle", e)} type="text"/></div>
-              <div>id <input value={polygon.id} onChange={e => this.handleItemCreateChange(POLYGON, "id", e)} type="text"/></div>
-              <div className="item-add" onClick={() => this.handleItemAdd(POLYGON)}>Add Polygon</div>
+            <div className="polygon-create item-create">
+              <div className="item-create-content">
+                <div className="item-type-title">Add a Polygon</div>
+                <div>fillStyle <input value={polygon.fillStyle} onChange={e => this.handleItemCreateChange(POLYGON, "fillStyle", e)} type="text"/></div>
+                <div>id <input value={polygon.id} onChange={e => this.handleItemCreateChange(POLYGON, "id", e)} type="text"/></div>
+                <div className="item-add" onClick={() => this.handleItemAdd(POLYGON)}>Add Polygon</div>
+              </div>
             </div>
           </div>
         </div>
