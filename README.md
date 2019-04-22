@@ -4,8 +4,17 @@
 
 [![NPM](https://img.shields.io/npm/v/react-interactive-canvas.svg)](https://www.npmjs.com/package/react-interactive-canvas) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Demo
-https://jbccollins.github.io/react-interactive-canvas
+## [Demo](https://react-interactive-canvas-demo.herokuapp.com/)
+
+To test local changes using the demo replace
+```
+"react-interactive-canvas": "x.x.x"
+```
+with
+```
+"react-interactive-canvas": "link.."
+```
+In the demo's `package.json`
 
 ## Install
 
@@ -72,10 +81,22 @@ Once those steps are complete then for any mouse event on the main visible canva
 
 ##### If the main canvas looks something like this:
 <img src="readme_images/visible.png" alt="visible_canvas">
+
 ##### Then after masking each component the event canvas might look something like this:
 <img src="readme_images/hidden.png" alt="hidden_canvas">
 
 (it won't be visible to the user of course!)
+
+## Motivation
+
+Honestly this package was built kinda just for fun. In 99% of use cases you're gonna be better off just using an SVG. The only situations in which this might be useful are
+1) You want pixel perfect* mouse event registration on the non-transparent pixels of an image.
+2) You want to draw A LOT of shapes. (Having a lot of SVG elements can cause performance issues)
+
+*yeah so this isn't exactly pixel perfect but it's pretty close. Canvas anti-aliasing makes this... difficult. But not impossible! Drawing pixel perfect shapes is dooable but it's a lot slower and requires you to manually implement shape definitions. See the `SAFE CIRCLE` comment in `Circle.js` as an example.
+
+## Attribution
+This project was bootstrapped using https://github.com/DimiMikadze/create-react-library
 
 ## License
 
