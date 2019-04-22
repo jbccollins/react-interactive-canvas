@@ -1,7 +1,7 @@
 {
   "name": "react-interactive-canvas",
-  "version": "1.0.1",
-  "description": "A declarative canvas component that supports interaction events",
+  "version": "1.0.2",
+  "description": "Declarative canvas components that support mouse events",
   "author": "jbccollins",
   "license": "MIT",
   "repository": "jbccollins/react-interactive-canvas",
